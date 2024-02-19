@@ -1,0 +1,202 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #FFF8F3;
+  }
+  
+  
+  .container {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  header {
+    text-align: center;
+    background-color: antiquewhite;
+  }
+  
+  .sidebar {
+    height: 50%;
+    width: 250px;
+    background-color: #FCEBD3;
+    padding-top: 20px;
+    height: auto;
+    border-radius: 35px;
+  }
+  
+  .sidebar a {
+    padding: 30px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+  }
+  
+  .sidebar a:hover {
+    background-color: lightcoral;
+    border-radius: 35px;
+  }
+  
+  .mainPage {
+    margin: 10px auto; /* เปลี่ยนค่า margin-top รองรับ mobile device */
+    padding: 20px;
+    width: 700px;
+    width: 100%;
+    flex: 1;
+  }
+  
+  .secondary-content {
+    background-color: #FCEBD3;
+    padding: 20px;
+    border-radius: 35px;
+    text-align: center;
+    margin-left: auto; /* ให้ secondary-content อยู่ด้านขวา */
+   
+  }
+  
+  .footer {
+    background-color: #FCE4C4;
+    color: black;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  .footer-content {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  
+  .footer-content p {
+    margin: 5px 0;
+  }
+  
+  .footer-content a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer-content a:hover {
+    text-decoration: underline;
+  }
+  .grid-header { grid-area: header ;}
+  .grid-menu { grid-area: menu; }
+  .grid-about { grid-area: main; }
+  .grid-secondary-content { grid-area: right; }
+  .grid-footer { grid-area: footer; }
+  
+  .grid-container {
+    display: grid;
+    grid-template-areas:
+      'header header header header header header'
+      'menu main main main right right'
+      'footer footer footer footer footer footer';
+    gap: 10px;
+    background-color: #FFF8F3;
+    padding: 10px;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  @media screen and (max-width: 600px) {
+    .grid-container {
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+  }
+  
+  .grid-container > div {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+   
+    
+  }
+
+
+
+  
+  /* CSS for mobile devices */
+  @media only screen and (max-width: 600px) {
+    .container {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      width: 100%;
+      height: auto;
+      float: none;
+    }
+  
+    .mainPage {
+      margin-top: 10px; /* เปลี่ยนค่า margin-top สำหรับ mobile device */
+      width: 100%;
+    }
+  
+    .secondary-content {
+      margin-left: 0; /* ยกเลิกการกำหนด margin-left */
+      grid-column: unset; /* ยกเลิกการกำหนด grid-column */
+    }
+  
+    video {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    .grid-container {
+        grid-template-areas:
+          "header"
+          "menu"
+          "main"
+          "right"
+          "footer";
+        grid-template-columns: 1fr;
+      }
+  }
+  
+  /* CSS for tablets */
+  @media only screen and (min-width: 601px) and (max-width: 767px) {
+    .container {
+      width: auto;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: space-around;
+  
+    }
+    
+    .sidebar{
+        flex: 1;
+    }
+  
+    .mainPage {
+      flex: 2;
+    }
+    .secondary-content {
+        flex-basis: 100%;
+    }
+    video {
+        width: 50%;
+        border: none;
+        
+    }
+    .grid-container {
+        grid-template-areas:
+          "header"
+          "menu"
+          "main"
+          "right"
+          "footer";
+        grid-template-columns: 1fr;
+      }
+
+  }
+
+  
+
+
+
+
+  
+  
